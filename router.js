@@ -13,6 +13,14 @@ class Router {
         server.get("/tracks", (req, res) => {
           res.json(s3MusicLibrary.tracks)
         })
+
+        server.get("/filter", (req, res) => {       
+          const hasQuery = !!Object.keys(req.query).length
+          hasQuery
+            ? res.json(s3MusicLibrary.filterBy(req.query))
+            : res.json({})
+        })
+
       })
   }
 }
