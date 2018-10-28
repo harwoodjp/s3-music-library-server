@@ -1,11 +1,11 @@
 {
   "name": "s3-music-library-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "JSON server for s3-music-library",
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.4",
-    "s3-music-library": "^1.0.3"
+    "s3-music-library": "^1.0.4"
   },
   "devDependencies": {
     "dotenv": "^6.1.0"
