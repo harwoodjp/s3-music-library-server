@@ -1,0 +1,19 @@
+{
+  "name": "s3-music-library-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "s3-music-library": "^1.0.3"
+  },
+  "devDependencies": {
+    "dotenv": "^6.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
