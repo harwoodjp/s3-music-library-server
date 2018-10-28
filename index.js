@@ -1,5 +1,4 @@
 const express = require("express"),
-  bodyParser = require("body-parser"),
   Router = require("./router")
 
 class S3MusicLibraryServer {
@@ -12,14 +11,13 @@ class S3MusicLibraryServer {
 
   _setup() {
     this.server = express()
-    this.server.use(bodyParser.json())
     new Router(this.server, this.s3MusicLibrary)
   }
 
   _start() {
-    this.server.listen(this.port, () => {
+    this.server.listen(this.port, () =>
       console.log(`http://localhost:${this.port}`)
-    })
+    )
   } 
   
 }
