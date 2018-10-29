@@ -14,8 +14,5 @@ const s3MusicLibrary = new S3MusicLibrary(
   AWS_SECRET_ACCESS_KEY
 )
 
-
-const s3MusicLibraryServer = new S3MusicLibraryServer(
-  s3MusicLibrary, 
-  1776
-)
+const s3MusicLibraryServer = new S3MusicLibraryServer(s3MusicLibrary)
+s3MusicLibraryServer.listen(1993)

@@ -6,7 +6,6 @@ class S3MusicLibraryServer {
     this.s3MusicLibrary = s3MusicLibrary
     this.port = port
     this._setup()
-    this._start()
   }
 
   _setup() {
@@ -14,9 +13,9 @@ class S3MusicLibraryServer {
     new Router(this.server, this.s3MusicLibrary)
   }
 
-  _start() {
-    this.server.listen(this.port, () =>
-      console.log(`http://localhost:${this.port}`)
+  listen(port) {
+    this.server.listen(port, () =>
+     console.log(`http://localhost:${port}`)
     )
   } 
   

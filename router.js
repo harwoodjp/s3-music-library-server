@@ -2,6 +2,15 @@ class Router {
   constructor(server, s3MusicLibrary) {
     s3MusicLibrary.fetchData()
       .then(() => {       
+        
+        server.get('/*', (req, res, next) => {
+          res.setHeader('Access-Control-Allow-Origin', '*')
+          res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+          res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+          res.setHeader('Access-Control-Allow-Credentials', true)
+          next()
+        })
+        
         server.get("/artists", (req, res) => {
           res.json(s3MusicLibrary.artists)
         })
